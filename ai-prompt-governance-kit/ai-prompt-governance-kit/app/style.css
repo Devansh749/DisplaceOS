@@ -1,0 +1,27 @@
+:root{--bg:#f3f5f8;--card:#fff;--ink:#1c2430;--mut:#64707f;--line:#dde2ea;--pri:#1f5fbf;--red:#c62828;--org:#e67e22;--yel:#c9a000;--grn:#2e7d32;--gry:#78808c}
+*{box-sizing:border-box}body{margin:0;font:15px/1.45 system-ui,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}
+[hidden]{display:none!important}
+#app{display:none}
+body.logged-in #app{display:block}
+body.logged-in #login-screen{display:none}
+body:not(.logged-in){overflow:hidden}
+h2{margin:.2em 0 .6em}h3{margin:.8em 0 .4em}.muted{color:var(--mut)}.small{font-size:12px}.err{color:var(--red)}code{background:#eef1f6;padding:1px 4px;border-radius:3px}
+#login-screen{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;min-height:100vh;background:var(--bg)}#loginForm{background:var(--card);padding:28px;border-radius:10px;width:min(380px,92vw);box-shadow:0 4px 18px #0002}
+label{display:block;margin:8px 0;font-size:13px;color:var(--mut)}input,select,textarea,button{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:#fff}
+label input,label select,label textarea{display:block;width:100%;margin-top:3px;color:var(--ink)}button{cursor:pointer}button:hover{background:#eef3fb}button.pri{background:var(--pri);color:#fff;border-color:var(--pri)}button.dng{color:var(--red);border-color:var(--red)}button.sm{padding:2px 7px;font-size:12px;margin:1px}
+header{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;background:#14233b;color:#fff;padding:8px 14px}header button{color:var(--ink)}
+.shell{display:flex;min-height:calc(100vh - 46px)}nav{width:190px;background:#fff;border-right:1px solid var(--line);padding:8px;flex:none}
+nav button{display:block;width:100%;text-align:left;border:0;margin:2px 0;background:none}nav button.on{background:var(--pri);color:#fff}main{flex:1;padding:16px;min-width:0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px}
+.card b{display:block;font-size:24px}.card span{color:var(--mut);font-size:12px}.card.alert b{color:var(--red)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;margin-bottom:12px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f7f9fc;white-space:nowrap}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:end;margin-bottom:8px}.row label{margin:0}.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.b{display:inline-block;padding:1px 8px;border-radius:10px;color:#fff;font-size:12px;background:var(--gry);white-space:nowrap}
+.Critical,.Blocked,.Cancelled,.Waiting{background:var(--red)}.High,.Restricted,.Serious{background:var(--org)}.Medium,.Pending,.Unknown,.Submitted,.PendingApproval{background:var(--yel)}
+.Low,.Open,.Resolved,.Received,.Completed,.Stable,.Operational,.Discharged{background:var(--grn)}.Assigned,.Approved,.Deployed,.InProgress,.Dispatched,.InTransit,.Admitted,.Reviewed{background:var(--pri)}
+.warn{background:#fff4e0;border-left:4px solid var(--org);padding:6px 10px;margin:4px 0;border-radius:4px}.bad{background:#fdeaea;border-left-color:var(--red)}
+#toast{position:fixed;bottom:16px;right:16px;background:#1c2430;color:#fff;padding:10px 14px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .2s;max-width:80vw}#toast.show{opacity:1}#toast.err{background:var(--red)}
+svg.map{width:100%;height:auto;background:#e8f0e4;border:1px solid var(--line);border-radius:8px}svg.map text{font-size:10px}svg.map .mk{cursor:pointer}
+.legend span{margin-right:10px;font-size:12px}
+@media(max-width:720px){.shell{flex-direction:column}nav{width:auto;display:flex;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line)}nav button{white-space:nowrap;width:auto}}

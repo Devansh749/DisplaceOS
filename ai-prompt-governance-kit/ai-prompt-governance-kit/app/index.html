@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DisplaceOS – Disaster Relief Control Centre</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="login-screen">
+  <form id="loginForm" onsubmit="login(event)">
+    <h1>DisplaceOS</h1>
+    <p class="muted">Disaster relief control centre · <b>demonstration build, fictional data</b></p>
+    <label>Username<input name="u" autocomplete="username" required></label>
+    <label>Password<input name="p" type="password" autocomplete="current-password" required></label>
+    <button class="pri">Sign in</button>
+    <p id="loginErr" class="err"></p>
+    <p class="muted small">Demo accounts: <code>admin</code> / <code>Admin#Demo1</code> · <code>ground1</code> / <code>Ground#Demo1</code>.<br>
+    Browser-only demo login: not secure authentication.</p>
+  </form>
+</div>
+<div id="app" hidden>
+  <header><b>DisplaceOS</b><span id="who"></span>
+    <span><button onclick="resetDemo()">Restore demo data</button> <button onclick="logout()">Log out</button></span></header>
+  <div class="shell"><nav id="nav"></nav><main id="view"></main></div>
+</div>
+<div id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
